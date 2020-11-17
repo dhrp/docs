@@ -1,0 +1,488 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: StatefulSet
+  metadata:
+    creationTimestamp: "2020-11-11T11:30:10Z"
+    generation: 2
+    labels:
+      app.kubernetes.io/component: database
+      app.kubernetes.io/instance: my-group-tls
+      app.kubernetes.io/managed-by: kubedb.com
+      app.kubernetes.io/name: mysql
+      app.kubernetes.io/version: 5.7.31
+      kubedb.com/kind: MySQL
+      kubedb.com/name: my-group-tls
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:collisionCount: {}
+          f:currentReplicas: {}
+          f:currentRevision: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updateRevision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2020-11-11T11:41:43Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:kubedb.com/kind: {}
+            f:kubedb.com/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"1f3defd3-98fa-4155-871f-e46ebb6145bf"}:
+              .: {}
+              f:apiVersion: {}
+              f:blockOwnerDeletion: {}
+              f:controller: {}
+              f:kind: {}
+              f:name: {}
+              f:uid: {}
+        f:spec:
+          f:podManagementPolicy: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector:
+            f:matchLabels:
+              .: {}
+              f:kubedb.com/kind: {}
+              f:kubedb.com/name: {}
+          f:serviceName: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:kubedb.com/kind: {}
+                f:kubedb.com/name: {}
+            f:spec:
+              f:containers:
+                k:{"name":"exporter"}:
+                  .: {}
+                  f:args: {}
+                  f:command: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"MYSQL_ROOT_PASSWORD"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:secretKeyRef:
+                          .: {}
+                          f:key: {}
+                          f:name: {}
+                    k:{"name":"MYSQL_ROOT_USERNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:secretKeyRef:
+                          .: {}
+                          f:key: {}
+                          f:name: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":56790,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                k:{"name":"mysql"}:
+                  .: {}
+                  f:args: {}
+                  f:command: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"BASE_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"BASE_SERVER_ID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GOV_SVC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GROUP_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"MYSQL_ROOT_PASSWORD"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:secretKeyRef:
+                          .: {}
+                          f:key: {}
+                          f:name: {}
+                    k:{"name":"MYSQL_ROOT_USERNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:secretKeyRef:
+                          .: {}
+                          f:key: {}
+                          f:name: {}
+                    k:{"name":"POD_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef:
+                          .: {}
+                          f:apiVersion: {}
+                          f:fieldPath: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:exec:
+                      .: {}
+                      f:command: {}
+                    f:failureThreshold: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":3306,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:exec:
+                      .: {}
+                      f:command: {}
+                    f:failureThreshold: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/var/lib/mysql"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"replication-mode-detector"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"MYSQL_ROOT_PASSWORD"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:secretKeyRef:
+                          .: {}
+                          f:key: {}
+                          f:name: {}
+                    k:{"name":"MYSQL_ROOT_USERNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:secretKeyRef:
+                          .: {}
+                          f:key: {}
+                          f:name: {}
+                    k:{"name":"POD_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef:
+                          .: {}
+                          f:apiVersion: {}
+                          f:fieldPath: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:initContainers:
+                .: {}
+                k:{"name":"remove-lost-found"}:
+                  .: {}
+                  f:command: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/var/lib/mysql"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"tmp"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+          f:updateStrategy:
+            f:type: {}
+          f:volumeClaimTemplates: {}
+      manager: my-operator
+      operation: Update
+      time: "2020-11-11T11:41:43Z"
+    name: my-group-tls
+    namespace: demo
+    ownerReferences:
+    - apiVersion: kubedb.com/v1alpha2
+      blockOwnerDeletion: true
+      controller: true
+      kind: MySQL
+      name: my-group-tls
+      uid: 1f3defd3-98fa-4155-871f-e46ebb6145bf
+    resourceVersion: "98057"
+    selfLink: /apis/apps/v1/namespaces/demo/statefulsets/my-group-tls
+    uid: 5aab35db-587b-44fd-acc4-acff2e8d0c9f
+  spec:
+    podManagementPolicy: OrderedReady
+    replicas: 3
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        kubedb.com/kind: MySQL
+        kubedb.com/name: my-group-tls
+    serviceName: my-group-tls-pods
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          kubedb.com/kind: MySQL
+          kubedb.com/name: my-group-tls
+      spec:
+        containers:
+        - args:
+          - run
+          - --db-name=my-group-tls
+          - --logtostderr=true
+          - --alsologtostderr=false
+          - --v=3
+          - --stderrthreshold=0
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: my-group-tls-auth
+          - name: MYSQL_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: username
+                name: my-group-tls-auth
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.name
+          image: kubedb/mysql-replication-mode-detector:v0.1.1
+          imagePullPolicy: IfNotPresent
+          name: replication-mode-detector
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        - args:
+          - -service=my-group-tls-pods
+          - -on-start
+          - /on-start.sh
+          command:
+          - peer-finder
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: my-group-tls-auth
+          - name: MYSQL_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: username
+                name: my-group-tls-auth
+          - name: BASE_NAME
+            value: my-group-tls
+          - name: GOV_SVC
+            value: my-group-tls-pods
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          - name: GROUP_NAME
+            value: dc002fc3-c412-4d18-b1d4-66c1fbfbbc9b
+          - name: BASE_SERVER_ID
+            value: "100"
+          image: kubedb/mysql:5.7.31
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            exec:
+              command:
+              - bash
+              - -c
+              - |2
+
+                export MYSQL_PWD=${MYSQL_ROOT_PASSWORD}
+                mysql -h localhost -nsLNE -e "select member_state from performance_schema.replication_group_members where member_id=@@server_uuid;" 2>/dev/null | grep "ONLINE"
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: mysql
+          ports:
+          - containerPort: 3306
+            name: db
+            protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+              - bash
+              - -c
+              - |2
+
+                export MYSQL_PWD=${MYSQL_ROOT_PASSWORD}
+                mysql -h localhost -nsLNE -e "select member_state from performance_schema.replication_group_members where member_id=@@server_uuid;" 2>/dev/null | grep "ONLINE"
+            failureThreshold: 3
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 50
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /tmp
+            name: tmp
+          - mountPath: /var/lib/mysql
+            name: data
+        - args:
+          - -c
+          - export DATA_SOURCE_NAME="${MYSQL_ROOT_USERNAME:-}:${MYSQL_ROOT_PASSWORD:-}@(127.0.0.1:3306)/";/bin/mysqld_exporter
+            --web.listen-address=:56790 --web.telemetry-path=/metrics
+          command:
+          - /bin/sh
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: my-group-tls-auth
+          - name: MYSQL_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: username
+                name: my-group-tls-auth
+          image: kubedb/mysqld-exporter:v0.11.0
+          imagePullPolicy: IfNotPresent
+          name: exporter
+          ports:
+          - containerPort: 56790
+            name: metrics
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        initContainers:
+        - command:
+          - rm
+          - -rf
+          - /var/lib/mysql/lost+found
+          image: kubedb/busybox
+          imagePullPolicy: IfNotPresent
+          name: remove-lost-found
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /var/lib/mysql
+            name: data
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: my-group-tls
+        serviceAccountName: my-group-tls
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir: {}
+          name: tmp
+    updateStrategy:
+      type: OnDelete
+    volumeClaimTemplates:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        annotations:
+          volume.beta.kubernetes.io/storage-class: standard
+        creationTimestamp: null
+        name: data
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: standard
+        volumeMode: Filesystem
+      status:
+        phase: Pending
+  status:
+    collisionCount: 0
+    currentReplicas: 3
+    currentRevision: my-group-tls-7449cb8797
+    observedGeneration: 2
+    readyReplicas: 3
+    replicas: 3
+    updateRevision: my-group-tls-78d5988f64
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,10 +1,12 @@
 apiVersion: kubedb.com/v1alpha2
 kind: MySQL
 metadata:
-  name: my-group-tls
+  name: my-group
   namespace: demo
 spec:
-  version: "8.0.21"
+  version: 5.7.31
+  # configSecret:
+  #   name: my-config
   replicas: 3
   topology:
     mode: GroupReplication
@@ -19,19 +21,26 @@ spec:
     resources:
       requests:
         storage: 1Gi
-  requireSSL: true
-  tls:
-    issuerRef:
-      apiGroup: cert-manager.io
-      kind: Issuer
-      name: mysql-issuer
-    certificates:
-    - alias: server
-      subject:
-        organizations:
-        - kubedb:server
-      dnsNames:
-      - localhost
-      ipAddresses:
-      - "127.0.0.1"
+  # requireSSL: true
+  # tls:
+  #   issuerRef:
+  #     apiGroup: cert-manager.io
+  #     kind: Issuer
+  #     name: my-issuer
+  #   certificates:
+  #   - alias: server
+  #     subject:
+  #       organizations:
+  #       - kubedb:server
+  #     dnsNames:
+  #     - localhost
+  #     ipAddresses:
+  #     - "127.0.0.1"
   terminationPolicy: WipeOut
+  monitor:
+    agent: prometheus.io
+  # podTemplate:
+  #   spec:
+  #     args:
+  #     - --default-auth=mysql_native_password
+  
